@@ -7,7 +7,7 @@ January , 2019
 
 ### Domain Background
 
-(Dogs vs. Cats) The project is a competition topic for kaggle in 2013. The goal is to train a model to distinguish whether it is a cat or a dog from a given picture. This is a problem in the field of computer vision, and it is a binary classifaction problem.
+(Dogs vs. Cats) The project is a competition topic for kaggle in 2013. The goal is to train a model to distinguish whether it is a cat or a dog from a given picture. This is a problem in the field of computer vision, and also a binary classifaction problem.
 
 Deep learning is one of the most important breakthroughs in the field of artificial intelligence in the past decade. It has achieved great success in speech recognition, natural language processing, computer vision, image and video analysis, multimedia, and many other fields.
 
@@ -19,8 +19,11 @@ Model	            | AlexNet | ZFNet |	GoogLeNet | ResNet | GBD-Net | SeNet
 
 Top 5 error rate	| 15.4%	  | 11.2% |	  6.7%    | 3.57%  | 2.99%   | 2.3%
 
+https://github.com/zjplus/capstone_dog_vs_cat/edit/master/proposal.md
 
+https://github.com/fanpaa/my-udacity-mlnd/blob/master/proposal.pdf
 
+https://github.com/chenmengjie-xiaomi/dog_vs_cat/blob/master/proposal.pdf
 
 ### Problem Statement
 
