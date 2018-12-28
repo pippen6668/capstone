@@ -1,15 +1,17 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Proposal
-Joe Udacity  
-December 31st, 2050
+yfchiena  
+January , 2019
 
 ## Proposal
-_(approx. 2-3 pages)_
 
 ### Domain Background
-_(approx. 1-2 paragraphs)_
 
-In this section, provide brief details on the background information of the domain from which the project is proposed. Historical information relevant to the project should be included. It should be clear how or why a problem in the domain can or should be solved. Related academic research should be appropriately cited in this section, including why that research is relevant. Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
+(Dogs vs. Cats) The project is a competition topic for kaggle in 2013. The goal is to train a model to distinguish whether it is a cat or a dog from a given picture. This is a problem in the field of computer vision, and it is a binary classifaction problem.
+Deep learning is one of the most important breakthroughs in the field of artificial intelligence in the past decade. It has achieved great success in speech recognition, natural language processing, computer vision, image and video analysis, multimedia, and many other fields.
+The most influential breakthrough in deep learning in computer vision occurred in 2012, and Hinton's research team won the ImageNet Image Classification Competition with deep learning. Since then, the annual ImageNet image classification competition has won the championship of the neural network.
+
+
 
 ### Problem Statement
 _(approx. 1 paragraph)_
