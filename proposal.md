@@ -8,12 +8,15 @@ January , 2019
 ### Domain Background
 
 (Dogs vs. Cats) The project is a competition topic for kaggle in 2013. The goal is to train a model to distinguish whether it is a cat or a dog from a given picture. This is a problem in the field of computer vision, and it is a binary classifaction problem.
+
 Deep learning is one of the most important breakthroughs in the field of artificial intelligence in the past decade. It has achieved great success in speech recognition, natural language processing, computer vision, image and video analysis, multimedia, and many other fields.
 
 The most influential breakthrough in deep learning in computer vision occurred in 2012, and Hinton's research team won the ImageNet Image Classification Competition with deep learning. Since then, the annual ImageNet image classification competition has won the championship of the neural network.
 
 Year	            |  2012	  | 2013	|   2014	  | 2015   | 2016    | 2017
+
 Model	            | AlexNet | ZFNet |	GoogLeNet | ResNet | GBD-Net | SeNet
+
 Top 5 error rate	| 15.4%	  | 11.2% |	  6.7%    | 3.57%  | 2.99%   | 2.3%
 
 
