@@ -27,23 +27,27 @@ The most influential breakthrough in deep learning in computer vision occurred i
 ### Problem Statement
 
 Input: A color photo.
+
 Output: The probability(0~1) of a cat or a dog.
+
 The project needs to identify cats and dogs, which is essentially a binary classification problem. Corresponding to supervised learning is to use the existing pictures with labels, and after the training is completed, the unlabeled pictures are classified. Therefore, it is also possible to solve this problem using a supervised learning method such as SVM. But due to the excellent performance of deep learning, I will choose the deep learning method to complete this project.
 
 ### Datasets and Inputs
-_(approx. 2-3 paragraphs)_
 
-In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
+The datasets comes from Kaggle, there are 25,000 pictures in the training data, half each for cats and dogs, and each picture has a category label. The test data has a total of 12,500 images. And the training:validation ratio is 4:1.
+
+In all the above pictures, all the color pictures contain RGB three-channel information, but the picture quality are different, and the images size are inconsistent. There is no way to directly input it into the neural network, so 'resize' is needed.
 
 ### Solution Statement
-_(approx. 1 paragraph)_
 
-In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
+Convolutional Neural Network (CNN) is one of the most representative network structures in deep learning technology. It has achieved great success in the field of image processing. Many successful models are on the international standard ImageNet dataset. It is based on CNN. One of the advantages of CNN over conventional image processing algorithms is that it avoids complex pre-processing of images (especially feature extraction) and can directly input the original image. The CNN network performs multiple convolutional layers and pooling layers processing on the image, gives two nodes in the output layer to obtain the respective probabilities of the two categories.
 
 ### Benchmark Model
 _(approximately 1-2 paragraphs)_
 
-In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
+Use keras-based network models to complete the project. On kaggle, there are total of 1,314 teams participated in the competition. So we can compare our results with all teams to get a relative comparison.
+
+In the Chinese version of the capstone project, there is a threshold for students to pass. The minimum requirement is reaching the top 10% (the score of 131 is 0.06127) of the kaggle Public Leaderboard. We can use this condition as a target to get the score less than 0.06127.
 
 ### Evaluation Metrics
 _(approx. 1-2 paragraphs)_
