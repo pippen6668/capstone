@@ -43,19 +43,27 @@ In all the above pictures, all the color pictures contain RGB three-channel info
 Convolutional Neural Network (CNN) is one of the most representative network structures in deep learning technology. It has achieved great success in the field of image processing. Many successful models are on the international standard ImageNet dataset. It is based on CNN. One of the advantages of CNN over conventional image processing algorithms is that it avoids complex pre-processing of images (especially feature extraction) and can directly input the original image. The CNN network performs multiple convolutional layers and pooling layers processing on the image, gives two nodes in the output layer to obtain the respective probabilities of the two categories.
 
 ### Benchmark Model
-_(approximately 1-2 paragraphs)_
 
 Use keras-based network models to complete the project. On kaggle, there are total of 1,314 teams participated in the competition. So we can compare our results with all teams to get a relative comparison.
 
-In the Chinese version of the capstone project, there is a threshold for students to pass. The minimum requirement is reaching the top 10% (the score of 131 is 0.06127) of the kaggle Public Leaderboard. We can use this condition as a target to get the score less than 0.06127.
+In the Chinese version of the capstone project, there is a threshold for students to pass. The minimum requirement is reaching the top 10% (the score of 131 is 0.06127) of the kaggle Public Leaderboard. Perhaps, We can use this condition as a target to get the score less than 0.06127.
 
 ### Evaluation Metrics
-_(approx. 1-2 paragraphs)_
 
-In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
+Follow the method of evaluation used in the Kaggle.
+
+$$ LogLoss = -\frac{1}{n}\sum_{i=1}^n [y_ilog(\hat{y}_i)+(1-y_i)log(1- \hat{y}_i)]$$
+
+where,
+* n is the number of images in the test set
+* $\hat{y}_i$ is the predicted probability of the image being a dog
+* $y_i$ is 1 if the image is a dog, 0 if cat
+* $log()$ is the natural (base e) logarithm
+
+A smaller log loss is better.
 
 ### Project Design
-_(approx. 1 page)_
+
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
