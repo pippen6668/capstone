@@ -13,20 +13,22 @@ Deep learning is one of the most important breakthroughs in the field of artific
 
 The most influential breakthrough in deep learning in computer vision occurred in 2012, and Hinton's research team won the ImageNet Image Classification Competition with deep learning. Since then, the annual ImageNet image classification competition has won the championship of the neural network.
 
-Year	            |  2012	  | 2013	|   2014	  | 2015   | 2016    | 2017
 
-Model	            | AlexNet | ZFNet |	GoogLeNet | ResNet | GBD-Net | SeNet
+| Year | Model | Top 5 error rate |
+| ------ | ------ | ------ |
+| 2012 | AlexNet | 15.4%	 |
+| 2013 | ZFNet | 11.2%	 |
+| 2014 | GoogLeNet | 6.7%	 |
+| 2015 | ResNet | 3.57%	 |
+| 2016 | GBD-Net | 2.99%	 |
+| 2017 | SeNet | 2.3%	 |
 
-Top 5 error rate	| 15.4%	  | 11.2% |	  6.7%    | 3.57%  | 2.99%   | 2.3%
-
-https://github.com/zjplus/capstone_dog_vs_cat/edit/master/proposal.md
-
-https://github.com/fanpaa/my-udacity-mlnd/blob/master/proposal.pdf
-
-https://github.com/chenmengjie-xiaomi/dog_vs_cat/blob/master/proposal.pdf
 
 ### Problem Statement
 
+Input: A color photo.
+Output: The probability(0~1) of a cat or a dog.
+The project needs to identify cats and dogs, which is essentially a binary classification problem. Corresponding to supervised learning is to use the existing pictures with labels, and after the training is completed, the unlabeled pictures are classified. Therefore, it is also possible to solve this problem using a supervised learning method such as SVM. But due to the excellent performance of deep learning, I will choose the deep learning method to complete this project.
 
 ### Datasets and Inputs
 _(approx. 2-3 paragraphs)_
