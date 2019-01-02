@@ -34,7 +34,7 @@ The project needs to identify cats and dogs, which is essentially a binary class
 
 ### Datasets and Inputs
 
-The datasets comes from Kaggle, there are 25,000 pictures in the training data, half each for cats and dogs, and each picture has a category label. The test data has a total of 12,500 images. And the training:validation ratio is 4:1.
+The datasets comes from Kaggle[1], there are 25,000 pictures in the training data, half each for cats and dogs, and each picture has a category label. The test data has a total of 12,500 images. And the training:validation ratio is 4:1.
 
 In all the above pictures, all the color pictures contain RGB three-channel information, but the picture quality are different, and the images size are inconsistent. There is no way to directly input it into the neural network, so 'resize' is needed.
 
@@ -50,7 +50,7 @@ In the Chinese version of the capstone project, there is a threshold for student
 
 ### Evaluation Metrics
 
-Follow the method of evaluation used in the Kaggle.
+A standard evaluation formula was proposed in the project of kaggle.
 
 $$ LogLoss = -\frac{1}{n}\sum_{i=1}^n [y_ilog(\hat{y}_i)+(1-y_i)log(1- \hat{y}_i)]$$
 
@@ -64,10 +64,21 @@ A smaller log loss is better.
 
 ### Project Design
 
+#### Datasets download and pre-processing
+* Download images from kaggle
+* Prepare data for keras.ImageDataGenerator, requiring cats and dogs to be sorted in different folders
+* Delete abnormal images
+* Resize the image to keep the size of the input image information consistent
 
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
+#### Feature extraction and model construction
+* Use different pre-train models from Keras to get the feature vectors.
+* Import single pre-trained network weights or multiple pre-trained network weights
+* Freeze all layers except fully connected to get the bottleneck feature
+
 
 -----------
+### Reference
+[1] Jaggle Dogs vs. Cats datasets: https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data
 
 **Before submitting your proposal, ask yourself. . .**
 
