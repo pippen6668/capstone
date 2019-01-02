@@ -11,7 +11,7 @@ January , 2019
 
 Deep learning is one of the most important breakthroughs in the field of artificial intelligence in the past decade. It has achieved great success in speech recognition, natural language processing, computer vision, image and video analysis, multimedia, and many other fields.
 
-The most influential breakthrough in deep learning in computer vision occurred in 2012, and Hinton's research team won the ImageNet Image Classification Competition with deep learning. Since then, the annual ImageNet image classification competition has won the championship of the neural network.
+Hinton's research team proposed the AlexNet architecture and won the ImageNet Image Classification Competition in 2012, which the accuracy is more than 10% above the second place. Since then, the annual champions are all methods of neural networks.
 
 
 | Year | Model | Top 5 error rate |
@@ -40,13 +40,13 @@ In all the above pictures, all the color pictures contain RGB three-channel info
 
 ### Solution Statement
 
-Convolutional Neural Network (CNN) is one of the most representative network structures in deep learning technology. It has achieved great success in the field of image processing. Many successful models are on the international standard ImageNet dataset. It is based on CNN. One of the advantages of CNN over conventional image processing algorithms is that it avoids complex pre-processing of images (especially feature extraction) and can directly input the original image. The CNN network performs multiple convolutional layers and pooling layers processing on the image, gives two nodes in the output layer to obtain the respective probabilities of the two categories.
+Convolutional Neural Network (CNN) is one of the most representative network structures in deep learning technology. It has achieved great success in the field of image processing. In the international standard ImageNet datasets, many successful models are based on a CNN. One of the advantages of CNN over traditional image processing algorithms is that it avoids complex pre-processing of images (especially feature extraction) and can directly input the original image. The CNN performs multiple convolutional layers and pooling layers processing on the image, and in the output layer to obtain the respective probabilities of the two categories.
 
 ### Benchmark Model
 
-Choose keras-based network models-ResNet50 to complete the project. On kaggle, there are total of 1,314 teams participated in the competition. So we can compare our results with all teams to get a relative comparison.
+Choose keras-based network model-ResNet50 to complete the project. On kaggle, there are total of 1,314 teams participated in the competition. So we can compare our results with all teams to get a relative comparison.
 
-In the Chinese version of the capstone project, there is a threshold for students to pass. The minimum requirement is reaching the top 10% (the score of 131 is 0.06127) of the kaggle Public Leaderboard. Maybe we can use this condition as a target to get the score less than 0.06127.
+In the Chinese version of the capstone project, there is a threshold for students to pass. The minimum requirement is reaching the top 10% (the score of 131 is 0.06127) of the kaggle Public Leaderboard. Maybe we can take this as the goal to get the score less than 0.06127.
 
 ### Evaluation Metrics
 
@@ -62,13 +62,13 @@ where,
 
 A smaller log loss is better.
 
-Log loss is also called Logistic regression loss or Cross-entropy loss, which is one of the commonly used evaluation methods in classfication. 
+'Log loss' is also called 'Logistic regression loss' or 'Cross-entropy loss', which is one of the commonly used evaluation methods in classfication problem. 
 
 ### Project Design
 
 #### Datasets download and pre-processing
 * Download images from Kaggle
-* Prepare data for keras.ImageDataGenerator, requiring cats and dogs to be sorted in different folders
+* Split cats and dogs to be sorted in different folders
 * Delete abnormal images
 * Resize the image to keep the size of the input image information consistent
 
@@ -80,7 +80,7 @@ Log loss is also called Logistic regression loss or Cross-entropy loss, which is
 
 -----------
 ### Reference
-[1] Jaggle Dogs vs. Cats datasets: https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data
+[1] Kaggle Dogs vs. Cats datasets: https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data
 
 **Before submitting your proposal, ask yourself. . .**
 
