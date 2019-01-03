@@ -15,7 +15,7 @@ Hinton's research team proposed the AlexNet architecture and won the ImageNet Im
 
 
 | Year | Model | Top 5 error rate |
-| ------ | ------ | ------ |
+| ------ | ------: | ------: |
 | 2012 | AlexNet | 15.4%	 |
 | 2013 | ZFNet | 11.2%	 |
 | 2014 | GoogLeNet | 6.7%	 |
