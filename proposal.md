@@ -7,7 +7,7 @@ January 3, 2019
 
 ### Domain Background
 
-[Dogs vs. Cats] The project is a competition topic for kaggle in 2013. The goal is to train a model to distinguish whether it is a cat or a dog from a given picture. This is a problem in the field of computer vision, and also a binary classifaction problem.
+**Dogs vs. Cats** is a competition topic for kaggle in 2013. The goal is to train a model to distinguish whether it is a cat or a dog from a given picture. This is a problem in the field of computer vision, and also a binary classifaction problem.
 
 Deep learning is one of the most important breakthroughs in the field of artificial intelligence in the past decade. It has achieved great success in speech recognition, natural language processing, computer vision, image and video analysis, multimedia, and many other fields.
 
@@ -52,14 +52,15 @@ In the Chinese version of the capstone project, there is a threshold for student
 
 A standard evaluation formula was proposed from Kaggle.
 
-LogLoss = `$-\frac{1}{n}\sum_{i=1}^n [y_ilog(\hat{y}_i)+(1-y_i)log(1-\hat{y}_i)]$`
+![](https://latex.codecogs.com/gif.latex?LogLoss=-\frac{1}{n}\sum_{i=1}^n[y_ilog(\hat{y}_i)+(1-y_i)log(1-\hat{y}_i)])
 
 where,
 
-* `$n$` is the number of images
-* `$\hat{y}_i$` is the probability that the model is predicted to be a dog
-* `$y_i$` is the category label, 1 corresponds to the dog, 0 corresponds to the cat
-* `$log()$` means natural logarithm
+* ![](https://latex.codecogs.com/gif.latex?n) is the number of images in the test set
+* ![](https://latex.codecogs.com/gif.latex?\hat{y}_i) is the predicted probability of the image being a dog
+* ![](https://latex.codecogs.com/gif.latex?\y_i) is 1 if the image is a dog, 0 if cat
+* ![](https://latex.codecogs.com/gif.latex?\log()) is the natural (base e) logarithm
+
 
 'Log loss' is also called 'Logistic regression loss' or 'Cross-entropy loss', which is one of the commonly used evaluation methods in classfication problem. 
 
