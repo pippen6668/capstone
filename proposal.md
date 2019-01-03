@@ -58,8 +58,8 @@ where,
 
 * ![](https://latex.codecogs.com/gif.latex?n) is the number of images in the test set
 * ![](https://latex.codecogs.com/gif.latex?\hat{y}_i) is the predicted probability of the image being a dog
-* ![](https://latex.codecogs.com/gif.latex?\y_i) is 1 if the image is a dog, 0 if cat
-* ![](https://latex.codecogs.com/gif.latex?\log()) is the natural (base e) logarithm
+* ![](https://latex.codecogs.com/gif.latex?y_i) is 1 if the image is a dog, 0 if cat
+* ![](https://latex.codecogs.com/gif.latex?log()) is the natural (base e) logarithm
 
 
 'Log loss' is also called 'Logistic regression loss' or 'Cross-entropy loss', which is one of the commonly used evaluation methods in classfication problem. 
