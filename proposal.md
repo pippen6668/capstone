@@ -1,7 +1,7 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Proposal
 yfchiena  
-January , 2019
+January 3, 2019
 
 ## Proposal
 
@@ -70,22 +70,21 @@ A smaller log loss is better.
 * Download images from Kaggle
 * Split cats and dogs to be sorted in different folders
 * Delete abnormal images
-* Resize the image to keep the size of the input image information consistent
+* Resize the image to keep the size consistent
 
-#### Feature extraction and model construction
-* Use different pre-train models from Keras to get the feature vectors.
-* Import single pre-trained network weights or multiple pre-trained network weights
-* Freeze all layers except fully connected to get the bottleneck feature
+#### Model construction and Feature extraction
+* Use pre-train models from Keras 
+* Revise the fully connected layer
+* Freeze all layers except fully connected layer to get the bottleneck feature
+
+#### Model training and Result output
+* Import trained weights to predict the result of testing set
+* Ouput csv file and upload to Kaggle
 
 
 -----------
 ### Reference
 [1] Kaggle Dogs vs. Cats datasets: https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data
 
-**Before submitting your proposal, ask yourself. . .**
 
-- Does the proposal you have written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Solution Statement** and **Project Design**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your proposal?
-- Have you properly proofread your proposal to assure there are minimal grammatical and spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
+
