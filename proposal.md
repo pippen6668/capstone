@@ -52,7 +52,14 @@ In the Chinese version of the capstone project, there is a threshold for student
 
 A standard evaluation formula was proposed from Kaggle.
 
-![image](https://github.com/pippen6668/capstone/blob/master/images/Log%20loss.gif)
+LogLoss = `$-\frac{1}{n}\sum_{i=1}^n [y_ilog(\hat{y}_i)+(1-y_i)log(1-\hat{y}_i)]$`
+
+where,
+
+* `$n$` is the number of images
+* `$\hat{y}_i$` is the probability that the model is predicted to be a dog
+* `$y_i$` is the category label, 1 corresponds to the dog, 0 corresponds to the cat
+* `$log()$` means natural logarithm
 
 'Log loss' is also called 'Logistic regression loss' or 'Cross-entropy loss', which is one of the commonly used evaluation methods in classfication problem. 
 
