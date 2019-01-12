@@ -119,9 +119,14 @@ As the name suggests, it is to migrate the learned model parameters to the new m
 
 
 ### Benchmark
-In this section, you will need to provide a clearly defined benchmark result or threshold for comparing across performances obtained by your solution. The reasoning behind the benchmark (in the case where it is not an established result) should be discussed. Questions to ask yourself when writing this section:
-- _Has some result or value been provided that acts as a benchmark for measuring performance?_
-- _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
+
+In this project, I decided to adopt the classic ResNet model. Since its introduction in 2015, ResNet has won the first place in the ImageNet competition classification task because it is “simple and practical”, and many methods are based on ResNet50 or ResNet101. On the basis of the completion, detection, segmentation, identification and other fields have a wide range of applications.
+
+On kaggle, there are total of 1,314 teams participated in the competition. In the Chinese version of the capstone project, there is a threshold for students to pass. The minimum requirement is reaching the top 10% (1314*0.1 = 131) of the kaggle Public Leaderboard. That is the logloss on the Public Leaderboard is below 0.06127.
+
+![](https://github.com/pippen6668/capstone/blob/master/images/leaderboard.png)
+
+In the Chinese version of the capstone project, there is a threshold for students to pass. The minimum requirement is reaching the top 10% (the score of 131 is 0.06127) of the kaggle Public Leaderboard. Maybe we can take this as the goal to get the score less than 0.06127.
 
 
 ## III. Methodology
