@@ -126,23 +126,34 @@ On kaggle, there are total of 1,314 teams participated in the competition. In th
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/leaderboard.png)
 
-In the Chinese version of the capstone project, there is a threshold for students to pass. The minimum requirement is reaching the top 10% (the score of 131 is 0.06127) of the kaggle Public Leaderboard. Maybe we can take this as the goal to get the score less than 0.06127.
-
 
 ## III. Methodology
-_(approx. 3-5 pages)_
 
 ### Data Preprocessing
-In this section, all of your preprocessing steps will need to be clearly documented, if any were necessary. From the previous section, any of the abnormalities or characteristics that you identified about the dataset will be addressed and corrected here. Questions to ask yourself when writing this section:
-- _If the algorithms chosen require preprocessing steps like feature selection or feature transformations, have they been properly documented?_
-- _Based on the **Data Exploration** section, if there were abnormalities or characteristics that needed to be addressed, have they been properly corrected?_
-- _If no preprocessing is needed, has it been made clear why?_
+
+* Split the training set into dog/ and cat/
+
+![](https://github.com/pippen6668/capstone/blob/master/images/split%20folder.png)
+
+* Use ImageDataGenerator to unify the image size into (224,224)
+
 
 ### Implementation
-In this section, the process for which metrics, algorithms, and techniques that you implemented for the given data will need to be clearly documented. It should be abundantly clear how the implementation was carried out, and discussion should be made regarding any complications that occurred during this process. Questions to ask yourself when writing this section:
-- _Is it made clear how the algorithms and techniques were implemented with the given datasets or input data?_
-- _Were there any complications with the original metrics or techniques that required changing prior to acquiring a solution?_
-- _Was there any part of the coding process (e.g., writing complicated functions) that should be documented?_
+
+1. Export bottleneck feature
+Use Keras' pre-training model ResNet50 to extract features and save for subsequent training and testing. Use GlobalAveragePooling2D to directly average each activation map of the convolutional layer output, otherwise the output file will be very large and easy to overfit. Then we use the model.predict_generator function to derive the bottleneck feature.
+
+![](https://github.com/pippen6668/capstone/blob/master/images/extract%20bottleneck%20feature.png)
+
+2. Load bottleneck feature
+In addition, need to shuffle the data, otherwise we will have problems after setting validation_split. This is because there is a trap here, the program executes the validation_split and then shuffle, so this happens: If your training set is ordered, for example, the positive sample is in the front negative sample, and then set With validation_split, then your validation set will most likely be a negative sample. Similarly, this thing will not be reported any errors, because Keras can't know if your data has been shuffled. If you are not shuffled, it is best to shuffle it manually.
+
+![](https://github.com/pippen6668/capstone/blob/master/images/load%20bottleneck%20feature.png)
+
+3. Construct and train model
+A part of the training set is taken out as a validation set in a certain proportion. Here we set to training set 8: Validation set 2 split ratio(0.2)
+
+![](https://github.com/pippen6668/capstone/blob/master/images/train.png)
 
 ### Refinement
 In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
