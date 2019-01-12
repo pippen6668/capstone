@@ -89,7 +89,28 @@ CNN's advantages in image recognition are mainly reflected in:
 
 * The recognition of an object is not affected by the positional change of the object in the picture
 
-The main components of CNN are convolution layer, pooling layer, fully connected layer. By continuously reducing the dimensions of the data, it can eventually be used to train. Below I will introduce the knowledge of 'Convolution layer', 'Pooling layer', 'ReLU', 'Dropout layer' and 'Transfer learning'
+The main components of CNN are convolution layer, pooling layer, fully connected layer. By continuously reducing the dimensions of the data, it can eventually be used to train. Below I will introduce the knowledge of 'Convolution layer', 'Pooling layer', 'Dropout layer' and 'Transfer learning'.
+
+![CNN](https://github.com/pippen6668/capstone/blob/master/images/CNN.png)
+
+(1) Convolution layer
+
+Through the convolution operation, the computationally intensive image recognition problem is continuously reduced, and finally it can be trained by the neural network. Intuitively, the convolutional layer can be thought of as a series of training/learning filters. A convolution filter slides over each pixel to form a new 3D output data.
+
+![Convolution principle](https://github.com/pippen6668/capstone/blob/master/images/Convolution.png)
+
+(2) Pooling layer
+
+Theoretically, the data after the convolution process can directly use for training, but the amount of calculation is still too large. In order to reduce the amount of calculation and improve the generalization ability of the model, we will pool it.
+
+![Pooling principle](https://github.com/pippen6668/capstone/blob/master/images/Convolution.png)
+
+(3) Dropout layer
+
+During the training of the deep learning network, the neural network unit is temporarily discarded from the network with a certain probability. This way can reduce the interaction between feature detectors and enhance the generalization ability of the model.
+
+![Dropout principle](https://github.com/pippen6668/capstone/blob/master/images/drop_out.png)
+
 
 
 
