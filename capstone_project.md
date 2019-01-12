@@ -95,7 +95,7 @@ The main components of CNN are convolution layer, pooling layer, fully connected
 
 (1) Convolution layer
 
-Through the convolution operation, the computationally intensive image recognition problem is continuously reduced, and finally it can be trained by the neural network. Intuitively, the convolutional layer can be thought of as a series of training/learning filters. A convolution filter slides over each pixel to form a new 3D output data.
+Through the convolution operation, the computationally intensive image recognition problem is continuously reduced, and finally it can be trained by the neural network. Intuitively, the convolutional layer can be thought of as a series of training/learning filters. A convolution filter slides over each pixel to form a new output data(feature map).
 
 ![Convolution principle](https://github.com/pippen6668/capstone/blob/master/images/Convolution.png)
 
@@ -103,7 +103,7 @@ Through the convolution operation, the computationally intensive image recogniti
 
 Theoretically, the data after the convolution process can directly use for training, but the amount of calculation is still too large. In order to reduce the amount of calculation and improve the generalization ability of the model, we will pool it.
 
-![Pooling principle](https://github.com/pippen6668/capstone/blob/master/images/Convolution.png)
+![Pooling principle](https://github.com/pippen6668/capstone/blob/master/images/Pooling_Simple_max.png)
 
 (3) Dropout layer
 
