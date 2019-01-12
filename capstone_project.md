@@ -179,9 +179,9 @@ The score of the submission result is 0.08762, bigger than 0.06127.
 
 ### Refinement
 
-After several times changes for parameter( such as optimizer, dropout ratio .etc), it still can't enter the top 10%. Then, I found a method to "merge model" when I was looking for another solution, and the result looks very powerful.
+After several times changes for parameter( such as optimizer, dropout ratio .etc), the score still can't reach top 10%. Then, I found a method to "merge model" when I was looking for another solution, and the result looks very powerful.
 
-The concept is to integrate the bottleneck features of different models (the auhor choose ResNet50, Xception, Inception V3) into a new bottleneck.
+The concept is to integrate the bottleneck features of different models (the author choose ResNet50, Xception, Inception V3) into a new bottleneck.
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/merge.png)
 
@@ -193,7 +193,7 @@ Using the merge model, I found that even if I relaxed image filter conditions, t
 ![](https://github.com/pippen6668/capstone/blob/master/images/merge_train.png)
 
 Finally, the score is improve to 0.04391(27/1314).
-
+![](https://github.com/pippen6668/capstone/blob/master/images/score2.png)
 ![](https://github.com/pippen6668/capstone/blob/master/images/27.png)
 
 ## IV. Results
