@@ -78,10 +78,20 @@ Due to  the data is presented as an image, so it can be quickly swept by the nak
 ![Abnormal images](https://github.com/pippen6668/capstone/blob/master/images/abnormal.png)
 
 ### Algorithms and Techniques
-In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
-- _Are the algorithms you will use, including any default variables/parameters in the project clearly defined?_
-- _Are the techniques to be used thoroughly discussed and justified?_
-- _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
+
+Cat and dog recognition is a binary classification problem. Along with the increase of data sets and the improvement of computing power, especially the explosive improvement of GPU computing power, the deep learning using convolutional neural network solves the problem of picture recognition. This project will use tensorflow and keras to build a learning model that is quick and easy to use.
+CNN (Convolutional Neural Network) is one of the most powerful deep learning neural networks, especially in image recognition applications. CNN's design prototype originated from LeNet5. It was mainly used for text recognition. Later, people continued to optimize the structure and performance of the network to form the CNN that we use today.
+CNN's advantages in image recognition are mainly reflected in:
+
+* Reduce the number of weights in the calculation process
+
+* It can resist slight distortion, deformation and other disturbances in object recognition
+
+* The recognition of an object is not affected by the positional change of the object in the picture
+
+The main components of CNN are convolution layer, pooling layer, fully connected layer. By continuously reducing the dimensions of the data, it can eventually be used to train. Below I will introduce the knowledge of 'Convolution layer', 'Pooling layer', 'ReLU', 'Dropout layer' and 'Transfer learning'
+
+
 
 ### Benchmark
 In this section, you will need to provide a clearly defined benchmark result or threshold for comparing across performances obtained by your solution. The reasoning behind the benchmark (in the case where it is not an established result) should be discussed. Questions to ask yourself when writing this section:
