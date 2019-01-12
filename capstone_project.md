@@ -160,7 +160,7 @@ A part of the training set is taken out as a validation set in a certain proport
 
 4. Remove abnormal images
 
-Use step3 well-trained model to predict the training set and try to remove  pictures with a large difference in the probability of owning the label ( eg. image is cat, but the result probability is 0.92, which classify as a dog)
+Use step3 well-trained model to predict the training set and try to remove  pictures with a large difference in the probability of owning the label ( eg. image is cat, but the result probability is 0.92, which classify as a dog). But even with such a strict setting, there are still many pictures that have been deleted by mistake.
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/remove%20abnormal%20image.png)
 
@@ -179,10 +179,22 @@ The score of the submission result is 0.08762, bigger than 0.06127.
 
 ### Refinement
 
-After several times changes for parameter( such as optimizer, dropout ratio .etc), it still can't enter the top 10%. Then, I found a method call **Mergent** when I was looking for another solution, and the result looks very powerful.
+After several times changes for parameter( such as optimizer, dropout ratio .etc), it still can't enter the top 10%. Then, I found a method to "merge model" when I was looking for another solution, and the result looks very powerful.
 
 The concept is to integrate the bottleneck features of different models (the auhor choose ResNet50, Xception, Inception V3) into a new bottleneck.
 
+![](https://github.com/pippen6668/capstone/blob/master/images/merge.png)
+
+Using the merge model, I found that even if I relaxed image filter conditions, the situation in which the picture was misjudged improved a lot. And the training accuracy increased to 0.998, training loss reduced to 0.03, validation accuracy increased to 0.995 and validation loss reduced to 0.11.
+
+![](https://github.com/pippen6668/capstone/blob/master/images/remove%20abnormal%20image2.png)
+![](https://github.com/pippen6668/capstone/blob/master/images/cd.png)
+![](https://github.com/pippen6668/capstone/blob/master/images/dd.png)
+![](https://github.com/pippen6668/capstone/blob/master/images/merge_train.png)
+
+Finally, the score is improve to 0.04391(27/1314).
+
+![](https://github.com/pippen6668/capstone/blob/master/images/27.png)
 
 ## IV. Results
 _(approx. 2-3 pages)_
