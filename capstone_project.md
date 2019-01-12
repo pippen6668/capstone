@@ -135,25 +135,47 @@ On kaggle, there are total of 1,314 teams participated in the competition. In th
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/split%20folder.png)
 
-* Use ImageDataGenerator to unify the image size into (224,224)
+* Use ImageDataGenerator to unify the image size into (224,224) and cat label as 0, dog label as 1
 
 
 ### Implementation
 
 1. Export bottleneck feature
+
 Use Keras' pre-training model ResNet50 to extract features and save for subsequent training and testing. Use GlobalAveragePooling2D to directly average each activation map of the convolutional layer output, otherwise the output file will be very large and easy to overfit. Then we use the model.predict_generator function to derive the bottleneck feature.
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/extract%20bottleneck%20feature.png)
 
 2. Load bottleneck feature
+
 In addition, need to shuffle the data, otherwise we will have problems after setting validation_split. This is because there is a trap here, the program executes the validation_split and then shuffle, so this happens: If your training set is ordered, for example, the positive sample is in the front negative sample, and then set With validation_split, then your validation set will most likely be a negative sample. Similarly, this thing will not be reported any errors, because Keras can't know if your data has been shuffled. If you are not shuffled, it is best to shuffle it manually.
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/load%20bottleneck%20feature.png)
 
-3. Construct and train model
+3. Construct and train the model
+
 A part of the training set is taken out as a validation set in a certain proportion. Here we set to training set 8: Validation set 2 split ratio(0.2)
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/train.png)
+
+4. Remove abnormal images
+
+Use step3 well-trained model to predict the training set and try to remove  pictures with a large difference in the probability of owning the label ( eg. image is cat, but the result probability is close to 1)
+
+![](https://github.com/pippen6668/capstone/blob/master/images/remove%20abnormal%20image.png)
+
+5. Re-train the model
+
+![](https://github.com/pippen6668/capstone/blob/master/images/re%20train.png)
+
+6. Predict for testing set and upload csv to Kaggle
+
+Here we have a clip operation on the score of the result, and each prediction is limited to [0.005, 0.995] intervals. The official evaluation criterion of kaggle is LogLoss. For the prediction of the correct sample, the difference between 0.995 and 1 is very small, but for the sample that predicted the error, the gap between 0 and 0.005 is very large.
+
+![](https://github.com/pippen6668/capstone/blob/master/images/predict.png)
+![](https://github.com/pippen6668/capstone/blob/master/images/score.png)
+
+The score of the submission result is 0.08762, bigger than 0.06127.
 
 ### Refinement
 In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
