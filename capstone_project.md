@@ -107,11 +107,15 @@ Theoretically, the data after the convolution process can directly use for train
 
 (3) Dropout layer
 
-During the training of the deep learning network, the neural network unit is temporarily discarded from the network with a certain probability. This way can reduce the interaction between feature detectors and enhance the generalization ability of the model.
+During the training of the deep learning network, the neural network unit is temporarily discarded from the network with a certain probability to prevent over-fitting problems. This way can reduce the interaction between feature detectors and enhance the generalization ability of the model.
 
 ![Dropout principle](https://github.com/pippen6668/capstone/blob/master/images/drop_out.png)
 
+(4) Transfer learning
 
+As the name suggests, it is to migrate the learned model parameters to the new model to help the new model training. Considering that most of the data or tasks are related, we can use the migration learning to share the model parameters (also known as the knowledge learned by the model) in a certain way to the new model to speed up and optimize. The learning efficiency of the model does not have to learn from zero like most networks. For example, if you have already played Chinese chess, you can learn chess in analogy. If you have learned English, you can learn French in analogy. Everything in the world has commonalities. How to reasonably find similarities between them and use this bridge to help learn new knowledge is the core issue of migration learning.
+
+![Transfer learning](https://github.com/pippen6668/capstone/blob/master/images/transfer%20learning.png)
 
 
 ### Benchmark
