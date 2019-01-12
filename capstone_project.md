@@ -57,13 +57,19 @@ Project data sets can be downloaded from kaggle.
 
 The training set has a total of 25,000 images(12,500 cats and 12500 dogs), which are distinguished by file names. The tag name of each photo contains the tag of dog or cat.
 
+![training data with label]()
+
 The test set has a total of 12,500 images and there are no tags in the file names.
 
-The photos were taken in everyday life. Shooting techniques are free, taking the picture of the dog as an example.
+You can see the distribution of the image size as shown below.
+
+The distribution shows that the image size of the training set is scattered. To make the images size are consistent, I will use Keras-ImageDataGeneratro to solve this problem.
+
+And the photos were taken in everyday life. Shooting techniques are free, taking the picture of the dog as an example.
 
 Dogs appear alone, multiple dogs, humans enter the mirror, etc.
 
-
+Due to  the data is presented as an image, so it can be quickly swept by the naked eye, and some abnormal images are obviously found.
 
 ### Algorithms and Techniques
 In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
