@@ -183,28 +183,30 @@ After several times changes for parameter( such as optimizer, dropout ratio .etc
 
 The concept is to integrate the bottleneck features of different models (the author choose ResNet50, Xception, Inception V3) into a new bottleneck.
 
-![](https://github.com/pippen6668/capstone/blob/master/images/merge.png)
-
-Using the merge model, I found that even if I relaxed image filter conditions, the situation in which the picture was misjudged improved a lot. And the training accuracy increased to 0.998, training loss reduced to 0.03, validation accuracy increased to 0.995 and validation loss reduced to 0.11.
+Using the merge model, I found that even if I relaxed image filter conditions, the situation in which the picture was misjudged improved a lot.
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/remove%20abnormal%20image2.png)
 ![](https://github.com/pippen6668/capstone/blob/master/images/cd.png)
 ![](https://github.com/pippen6668/capstone/blob/master/images/dd.png)
 ![](https://github.com/pippen6668/capstone/blob/master/images/merge_train.png)
 
+
+## IV. Results
+
+
+### Model Evaluation and Validation
+
+The final model is shown below.
+
+![](https://github.com/pippen6668/capstone/blob/master/images/merge.png)
+
+And the training accuracy increased to 0.998, training loss reduced to 0.03, validation accuracy increased to 0.995 and validation loss reduced to 0.11.
+
+![](https://github.com/pippen6668/capstone/blob/master/images/accuracy%20and%20loss.png)
+
 Finally, the score is improve to 0.04391(27/1314).
 ![](https://github.com/pippen6668/capstone/blob/master/images/score2.png)
 ![](https://github.com/pippen6668/capstone/blob/master/images/27.png)
-
-## IV. Results
-_(approx. 2-3 pages)_
-
-### Model Evaluation and Validation
-In this section, the final model and any supporting qualities should be evaluated in detail. It should be clear how the final model was derived and why this model was chosen. In addition, some type of analysis should be used to validate the robustness of this model and its solution, such as manipulating the input data or environment to see how the model’s solution is affected (this is called sensitivity analysis). Questions to ask yourself when writing this section:
-- _Is the final model reasonable and aligning with solution expectations? Are the final parameters of the model appropriate?_
-- _Has the final model been tested with various inputs to evaluate whether the model generalizes well to unseen data?_
-- _Is the model robust enough for the problem? Do small perturbations (changes) in training data or the input space greatly affect the results?_
-- _Can results found from the model be trusted?_
 
 ### Justification
 In this section, your model’s final solution and its results should be compared to the benchmark you established earlier in the project using some type of statistical analysis. You should also justify whether these results and the solution are significant enough to have solved the problem posed in the project. Questions to ask yourself when writing this section:
@@ -236,17 +238,3 @@ In this section, you will need to provide discussion as to how one aspect of the
 - _If you used your final solution as the new benchmark, do you think an even better solution exists?_
 
 -----------
-
-**Before submitting, ask yourself. . .**
-
-- Does the project report you’ve written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Analysis** and **Methodology**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your analysis, methods, and results?
-- Have you properly proof-read your project report to assure there are minimal grammatical and spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
-- Is the code that implements your solution easily readable and properly commented?
-- Does the code execute without error and produce results similar to those reported?
-
-
-
-
