@@ -148,7 +148,7 @@ Use Keras' pre-training model ResNet50 to extract features and save for subseque
 
 2. Load bottleneck feature
 
-In addition, need to shuffle the data, otherwise we will have problems after setting validation_split. This is because there is a trap here, the program executes the validation_split and then shuffle, so this happens: If your training set is ordered, for example, the positive sample is in the front negative sample, and then set With validation_split, then your validation set will most likely be a negative sample. Similarly, this thing will not be reported any errors, because Keras can't know if your data has been shuffled. If you are not shuffled, it is best to shuffle it manually.
+In addition, it needs to shuffle the data, otherwise we will have problems after setting validation_split. This is because there is a trap here, the program executes the validation_split and then shuffle, so this happens: If your training set is ordered, for example, the positive sample is in the front negative sample, and then set With validation_split, then your validation set will most likely be a negative sample. Similarly, this thing will not be reported any errors, because Keras can't know if your data has been shuffled. If you are not shuffled, it is best to shuffle it manually.
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/load%20bottleneck%20feature.png)
 
@@ -160,7 +160,7 @@ A part of the training set is taken out as a validation set in a certain proport
 
 4. Remove abnormal images
 
-Use step3 well-trained model to predict the training set and try to remove  pictures with a large difference in the probability of owning the label ( eg. image is cat, but the result probability is close to 1)
+Use step3 well-trained model to predict the training set and try to remove  pictures with a large difference in the probability of owning the label ( eg. image is cat, but the result probability is 0.92, which classify as a dog)
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/remove%20abnormal%20image.png)
 
@@ -178,10 +178,10 @@ Here we have a clip operation on the score of the result, and each prediction is
 The score of the submission result is 0.08762, bigger than 0.06127.
 
 ### Refinement
-In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
-- _Has an initial solution been found and clearly reported?_
-- _Is the process of improvement clearly documented, such as what techniques were used?_
-- _Are intermediate and final solutions clearly reported as the process is improved?_
+
+After several times changes for parameter( such as optimizer, dropout ratio .etc), it still can't enter the top 10%. Then, I found a method call **Mergent** when I was looking for another solution, and the result looks very powerful.
+
+The concept is to integrate the bottleneck features of different models (the auhor choose ResNet50, Xception, Inception V3) into a new bottleneck.
 
 
 ## IV. Results
