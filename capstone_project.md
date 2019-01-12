@@ -173,13 +173,13 @@ Use step3 well-trained model to predict the training set and try to remove  pict
 Here we have a clip operation on the score of the result, and each prediction is limited to [0.005, 0.995] intervals. The official evaluation criterion of kaggle is LogLoss. For the prediction of the correct sample, the difference between 0.995 and 1 is very small, but for the sample that predicted the error, the gap between 0 and 0.005 is very large.
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/predict.png)
-![](https://github.com/pippen6668/capstone/blob/master/images/score.png)
 
 The score of the submission result is 0.08762, bigger than 0.06127.
+![](https://github.com/pippen6668/capstone/blob/master/images/score.png)
 
 ### Refinement
 
-After several times changes for parameter( such as optimizer, dropout ratio .etc), the score still can't reach top 10%. Then, I found a method to "merge model" when I was looking for another solution, and the result looks very powerful.
+After several times changes for parameter( such as optimizer, dropout ratio .etc), the score still can't reach top 10%. Then, I found a method to "merge model" when I was looking for another solution, and the result looks very powerful.[1]
 
 The concept is to integrate the bottleneck features of different models (the author choose ResNet50, Xception, Inception V3) into a new bottleneck.
 
@@ -204,37 +204,42 @@ And the training accuracy increased to 0.998, training loss reduced to 0.03, val
 
 ![](https://github.com/pippen6668/capstone/blob/master/images/accuracy%20and%20loss.png)
 
+
+### Justification
+
 Finally, the score is improve to 0.04391(27/1314).
 ![](https://github.com/pippen6668/capstone/blob/master/images/score2.png)
 ![](https://github.com/pippen6668/capstone/blob/master/images/27.png)
 
-### Justification
-In this section, your model’s final solution and its results should be compared to the benchmark you established earlier in the project using some type of statistical analysis. You should also justify whether these results and the solution are significant enough to have solved the problem posed in the project. Questions to ask yourself when writing this section:
-- _Are the final results found stronger than the benchmark result reported earlier?_
-- _Have you thoroughly analyzed and discussed the final solution?_
-- _Is the final solution significant enough to have solved the problem?_
-
 
 ## V. Conclusion
-_(approx. 1-2 pages)_
 
 ### Free-Form Visualization
-In this section, you will need to provide some form of visualization that emphasizes an important quality about the project. It is much more free-form, but should reasonably support a significant result or characteristic about the problem that you want to discuss. Questions to ask yourself when writing this section:
-- _Have you visualized a relevant or important quality about the problem, dataset, input data, or results?_
-- _Is the visualization thoroughly analyzed and discussed?_
-- _If a plot is provided, are the axes, title, and datum clearly defined?_
+
+The above figure shows the prediction results of some test samples. It can be seen that the final model's predictions for these samples are basically correct. It can be seen from these results that the model is very capable of recognizing cats and dogs, even if many other objects appear in the picture, such as human body, cage , etc.
 
 ### Reflection
-In this section, you will summarize the entire end-to-end problem solution and discuss one or two particular aspects of the project you found interesting or difficult. You are expected to reflect on the project as a whole to show that you have a firm understanding of the entire process employed in your work. Questions to ask yourself when writing this section:
-- _Have you thoroughly summarized the entire process you used for this project?_
-- _Were there any interesting aspects of the project?_
-- _Were there any difficult aspects of the project?_
-- _Does the final model and solution fit your expectations for the problem, and should it be used in a general setting to solve these types of problems?_
+
+Using neural networks trained by Imagenet at the beginning of this experiment is the right choice, but the neural network of the Resnet50 may be not strong enough to meet the requirements of the project. But because of this, I learned a new method[1]. Once again prove the truth of **Unity is strength**. However, through this experiment, I also learned that it is very wise to use migration learning to solve such similar image classification problems. Keras has greatly improved the possibility of development and verification exploration.
 
 ### Improvement
-In this section, you will need to provide discussion as to how one aspect of the implementation you designed could be improved. As an example, consider ways your implementation can be made more general, and what would need to be modified. You do not need to make this improvement, but the potential solutions resulting from these changes are considered and compared/contrasted to your current solution. Questions to ask yourself when writing this section:
-- _Are there further improvements that could be made on the algorithms or techniques you used in this project?_
-- _Were there algorithms or techniques you researched that you did not know how to implement, but would consider using if you knew how?_
-- _If you used your final solution as the new benchmark, do you think an even better solution exists?_
+
+Although the initial goal has been reached, on the basis of the existing ones, there are still several ways to improve and improve the accuracy of the model:
+
+(1) Combination of other model merge
+
+There are still have lots of powerful model, such as VGG16, VGG19, InceptionResNet V2, DenseNet , etc.
+
+(2) Increase the train set data
+
+We can increase the number of train samples by flipping the image, changing the brightness of the image, and so on.
+
+(3) Better data cleaning method
+
+(4) Fine-tune the model
 
 -----------
+
+## Reference
+
+[1] https://zhuanlan.zhihu.com/p/25978105
